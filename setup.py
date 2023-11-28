@@ -8,7 +8,7 @@ __version__ = "0.0.0"
 
 REPO_NAME = "Audio-Based-Anomaly-Detection-for-Industrial-Machinery-End-to-End-Project-using-MLflow-DVC"
 AUTHOR_USER_NAME = "Jaison14"
-SRC_REPO = "Audio-Based-Anomaly-Detection"
+SRC_REPO = "Anomaly_Detection"
 AUTHOR_EMAIL = "jaison1414@gmail.com"
 
 
