@@ -1,1 +1,4 @@
-key: value
+training:
+  BATCH_SIZE: 256
+  EPOCHS: 400
+  FEATURE_COUNT: 5
