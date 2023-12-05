@@ -59,8 +59,8 @@ class Training:
         early_stopping = EarlyStopping(monitor='val_loss', patience=5, restore_best_weights=True)
         autoencoder.fit(
             X_train_scaled, X_train_scaled,
-            epochs=400,  # Increase epochs if necessary
-            batch_size=256,
+            epochs=self.config.params_epochs,  # Increase epochs if necessary
+            batch_size=self.config.params_batch_size,
             shuffle=True,
             validation_data=(X_val_scaled, X_val_scaled),
             callbacks=[early_stopping],

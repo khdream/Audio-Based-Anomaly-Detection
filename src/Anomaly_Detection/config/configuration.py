@@ -1,6 +1,6 @@
 from Anomaly_Detection.constants import *
 from Anomaly_Detection.utils.common import read_yaml, create_directories
-from Anomaly_Detection.entity.config_entity import (DataIngestionConfig, DataTransformationConfig, PrepareBaseModelConfig, TrainingConfig)
+from Anomaly_Detection.entity.config_entity import (DataIngestionConfig, DataTransformationConfig, EvaluationConfig, PrepareBaseModelConfig, TrainingConfig)
 
 
 class ConfigurationManager:
@@ -87,3 +87,26 @@ class ConfigurationManager:
         )
 
         return training_config
+        
+    def get_evaluation_config(self) -> EvaluationConfig:
+            evaluation = self.config.evaluation
+            params = self.params.training
+            create_directories([
+                Path(evaluation.root_dir)
+            ])
+            eval_config = EvaluationConfig(
+
+                mlflow_uri="https://dagshub.com/JAISON14/Audio-Based-Anomaly-Detection-for-Industrial-Machinery-End-to-End-Project-using-MLflow-DVC.mlflow",
+                root_dir=Path(evaluation.root_dir),
+                feature_names_path=Path(evaluation.feature_names_path),
+                trained_model_path=Path(evaluation.trained_model_path),
+                feature_importance_path=Path(evaluation.feature_importance_path),
+                X_combined_test_path=Path(evaluation.X_combined_test_path),
+                y_combined_test_path=Path(evaluation.y_combined_test_path),
+                scores_path=Path(evaluation.scores_path),
+                all_params=self.params,
+                params_epochs=params.EPOCHS,
+                params_batch_size=params.BATCH_SIZE,
+                params_feature_count=params.FEATURE_COUNT
+            )
+            return eval_config

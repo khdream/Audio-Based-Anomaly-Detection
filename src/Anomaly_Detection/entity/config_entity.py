@@ -41,3 +41,18 @@ class TrainingConfig:
     params_epochs: int
     params_batch_size: int
     params_feature_count: int
+
+@dataclass(frozen=True)
+class EvaluationConfig:
+    trained_model_path: Path
+    root_dir: Path
+    all_params: dict
+    mlflow_uri: str
+    feature_names_path: Path
+    feature_importance_path: Path
+    X_combined_test_path: Path
+    y_combined_test_path: Path
+    scores_path : Path
+    params_epochs: int
+    params_batch_size: int
+    params_feature_count: int

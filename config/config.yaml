@@ -34,6 +34,15 @@ training:
   feature_names_path : artifacts/data_transformation/feature_names.pkl
   feature_importance_path : artifacts/prepare_base_model/feature_importance_ranking.pkl
 
+evaluation:
+    root_dir: artifacts/evaluation
+    trained_model_path: artifacts/training/Encoder_Model.keras
+    feature_names_path : artifacts/data_transformation/feature_names.pkl
+    feature_importance_path : artifacts/prepare_base_model/feature_importance_ranking.pkl
+    X_combined_test_path: artifacts/training/X_combined_test.pkl
+    y_combined_test_path: artifacts/training/y_combined_test.pkl
+    scores_path: artifacts/evaluation/scores.pkl
+
 # training:
 #   root_dir: artifacts/training
 #   trained_model_path: artifacts/training/model.h5
