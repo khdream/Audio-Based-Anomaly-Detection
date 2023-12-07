@@ -99,12 +99,12 @@ class Evaluation:
             mlflow.log_params(self.config.all_params)
             feature_importance=joblib.load((os.path.join(self.config.root_dir,"feature_importance.pkl")))
             mlflow.log_params(feature_importance)
-
+            logger.info(f"Logging feature Importance to MLFlow: {feature_importance}")
             scores=joblib.load(self.config.scores_path)
 
             # Load the model
             model = load_model(self.config.trained_model_path)
-            
+            logger.info(f"Logging metrics to MLFlow: {scores}")
             mlflow.log_metrics(
                 scores
             )

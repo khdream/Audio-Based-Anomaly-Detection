@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/Jaison/Documents/Workspace/Main%20Projects/Audio-Based-Anomaly-Detection-for-Industrial-Machinery-End-to-End-Project-using-MLflow-DVC/mlruns/0/5ced367003ac4d6d8070d624594384a2/artifacts
+end_time: 1701965492034
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 5ced367003ac4d6d8070d624594384a2
+run_name: melodic-bird-754
+run_uuid: 5ced367003ac4d6d8070d624594384a2
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1701965456889
+status: 3
+tags: []
+user_id: Jaison
