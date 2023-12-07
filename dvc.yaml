@@ -3,6 +3,7 @@ stages:
     cmd: python src/Anomaly_Detection/pipeline/stage_01_data_ingestion.py
     deps:
       - src/Anomaly_Detection/pipeline/stage_01_data_ingestion.py
+      - src/Anomaly_Detection/components/data_ingestion.py
       - config/config.yaml
     outs:
       - artifacts/data_ingestion/abnormal
@@ -18,9 +19,10 @@ stages:
       - artifacts/data_transformation
 
   prepare_base_model:
-    cmd: python src\Anomaly_Detection\pipeline\stage_03_prepare_base_model.py
+    cmd: python src/Anomaly_Detection/pipeline/stage_03_prepare_base_model.py
     deps:
-      - src\Anomaly_Detection\pipeline\stage_03_prepare_base_model.py
+      - src/Anomaly_Detection/pipeline/stage_03_prepare_base_model.py
+      - src/Anomaly_Detection/components/prepare_base_model.py
       - config/config.yaml
     outs:
       - artifacts/prepare_base_model
@@ -30,6 +32,7 @@ stages:
     cmd: python src/Anomaly_Detection/pipeline/stage_04_model_trainer.py
     deps:
       - src/Anomaly_Detection/pipeline/stage_04_model_trainer.py
+      - src/Anomaly_Detection/components/model_trainer.py
       - config/config.yaml
       - artifacts/prepare_base_model
       - artifacts/data_transformation
@@ -43,6 +46,7 @@ stages:
     cmd: python src/Anomaly_Detection/pipeline/stage_05_model_evaluation.py
     deps:
       - src/Anomaly_Detection/pipeline/stage_05_model_evaluation.py
+      - src/Anomaly_Detection/components/model_evaluation_mlflow.py
       - config/config.yaml
       - artifacts/training/Encoder_Model.keras
     params:
