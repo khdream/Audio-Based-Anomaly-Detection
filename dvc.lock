@@ -1,0 +1,121 @@
+schema: '2.0'
+stages:
+  data_ingestion:
+    cmd: python src/Anomaly_Detection/pipeline/stage_01_data_ingestion.py
+    deps:
+    - path: config/config.yaml
+      hash: md5
+      md5: 110d10e1c0cbe63f6bf02f7843f3ca04
+      size: 2233
+    - path: src/Anomaly_Detection/pipeline/stage_01_data_ingestion.py
+      hash: md5
+      md5: 8c8d01a6741a86296f1283311ef3b615
+      size: 922
+    outs:
+    - path: artifacts/data_ingestion/abnormal
+      hash: md5
+      md5: 208d8c206e4d4dae7ed68528d442ba7d.dir
+      size: 353291040
+      nfiles: 138
+    - path: artifacts/data_ingestion/normal
+      hash: md5
+      md5: 16d91c02fc0d27cfe285c3c5a8001b59.dir
+      size: 975390480
+      nfiles: 381
+  data_transformation:
+    cmd: python src/Anomaly_Detection/pipeline/stage_02_data_transformation.py
+    deps:
+    - path: config/config.yaml
+      hash: md5
+      md5: 110d10e1c0cbe63f6bf02f7843f3ca04
+      size: 2233
+    - path: src/Anomaly_Detection/components/data_transformation.py
+      hash: md5
+      md5: 13d29b9cec390fa700c8d13c6533be3d
+      size: 7189
+    - path: src/Anomaly_Detection/pipeline/stage_02_data_transformation.py
+      hash: md5
+      md5: 2fa20503d331a56302bea44b4885e805
+      size: 1122
+    outs:
+    - path: artifacts/data_transformation
+      hash: md5
+      md5: e321104e2392f646427dcf8faecaa57c.dir
+      size: 209731
+      nfiles: 8
+  prepare_base_model:
+    cmd: python src\Anomaly_Detection\pipeline\stage_03_prepare_base_model.py
+    deps:
+    - path: config/config.yaml
+      hash: md5
+      md5: 110d10e1c0cbe63f6bf02f7843f3ca04
+      size: 2233
+    - path: src\Anomaly_Detection\pipeline\stage_03_prepare_base_model.py
+      hash: md5
+      md5: 9079a0aa6602fa00f3ab75554218981d
+      size: 1072
+    outs:
+    - path: artifacts/prepare_base_model
+      hash: md5
+      md5: a866ea26e843d7924535b4570178c1d0.dir
+      size: 825860
+      nfiles: 3
+  training:
+    cmd: python src/Anomaly_Detection/pipeline/stage_04_model_trainer.py
+    deps:
+    - path: artifacts/data_transformation
+      hash: md5
+      md5: e321104e2392f646427dcf8faecaa57c.dir
+      size: 209731
+      nfiles: 8
+    - path: artifacts/prepare_base_model
+      hash: md5
+      md5: a866ea26e843d7924535b4570178c1d0.dir
+      size: 825860
+      nfiles: 3
+    - path: config/config.yaml
+      hash: md5
+      md5: 110d10e1c0cbe63f6bf02f7843f3ca04
+      size: 2233
+    - path: src/Anomaly_Detection/pipeline/stage_04_model_trainer.py
+      hash: md5
+      md5: f5745341a86dcba4419edb30a35a0d20
+      size: 887
+    params:
+      params.yaml:
+        training:
+          FEATURE_COUNT: 10
+          EPOCHS: 500
+          BATCH_SIZE: 256
+    outs:
+    - path: artifacts/training/Encoder_Model.keras
+      hash: md5
+      md5: 881b8521a68ed7eb549ed39413d2c6d2
+      size: 384224
+  evaluation:
+    cmd: python src/Anomaly_Detection/pipeline/stage_05_model_evaluation.py
+    deps:
+    - path: artifacts/training/Encoder_Model.keras
+      hash: md5
+      md5: 881b8521a68ed7eb549ed39413d2c6d2
+      size: 384224
+    - path: config/config.yaml
+      hash: md5
+      md5: 110d10e1c0cbe63f6bf02f7843f3ca04
+      size: 2233
+    - path: src/Anomaly_Detection/pipeline/stage_05_model_evaluation.py
+      hash: md5
+      md5: 892bc864d069d636d4605182aa4a2a5a
+      size: 915
+    params:
+      params.yaml:
+        training:
+          FEATURE_COUNT: 10
+          EPOCHS: 500
+          BATCH_SIZE: 256
+    outs:
+    - path: artifacts/evaluation
+      hash: md5
+      md5: 82eced4f5f43dc73451623f0b4f2cf30.dir
+      size: 905
+      nfiles: 3

@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/Jaison/Documents/Workspace/Main%20Projects/Audio-Based-Anomaly-Detection-for-Industrial-Machinery-End-to-End-Project-using-MLflow-DVC/mlruns/0/c74c3c4de00743708379b67dceefd916/artifacts
+end_time: 1701970941566
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: c74c3c4de00743708379b67dceefd916
+run_name: glamorous-kit-726
+run_uuid: c74c3c4de00743708379b67dceefd916
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1701970918113
+status: 3
+tags: []
+user_id: Jaison

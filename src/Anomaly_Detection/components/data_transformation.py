@@ -129,6 +129,7 @@ class DataTransformation:
         X_combined_test = np.concatenate((X_val_scaled, X_test_scaled))
         y_combined_test = np.concatenate((np.zeros(len(X_val_scaled)), np.ones(len(X_test_scaled))))  # 0 for normal, 1 for abnormal
 
+        joblib.dump(scaler,(os.path.join(self.config.root_dir, "scaler.pkl")))
         joblib.dump(X_train_scaled,(os.path.join(self.config.root_dir, "X_train_scaled.pkl")))
         joblib.dump(X_val_scaled,(os.path.join(self.config.root_dir, "X_val_scaled.pkl")))
         joblib.dump(X_combined_test,(os.path.join(self.config.root_dir, "X_combined_test.pkl")))

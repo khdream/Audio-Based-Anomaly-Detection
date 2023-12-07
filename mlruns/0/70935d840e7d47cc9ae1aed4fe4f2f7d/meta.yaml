@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/Jaison/Documents/Workspace/Main%20Projects/Audio-Based-Anomaly-Detection-for-Industrial-Machinery-End-to-End-Project-using-MLflow-DVC/mlruns/0/70935d840e7d47cc9ae1aed4fe4f2f7d/artifacts
+end_time: 1701980508350
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 70935d840e7d47cc9ae1aed4fe4f2f7d
+run_name: marvelous-sloth-934
+run_uuid: 70935d840e7d47cc9ae1aed4fe4f2f7d
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1701980479297
+status: 3
+tags: []
+user_id: Jaison

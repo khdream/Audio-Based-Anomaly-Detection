@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/Jaison/Documents/Workspace/Main%20Projects/Audio-Based-Anomaly-Detection-for-Industrial-Machinery-End-to-End-Project-using-MLflow-DVC/mlruns/0/81b5069fdd0b4aef8eb3ea90be68efc8/artifacts
+end_time: 1701990020180
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 81b5069fdd0b4aef8eb3ea90be68efc8
+run_name: abundant-crane-588
+run_uuid: 81b5069fdd0b4aef8eb3ea90be68efc8
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1701989997483
+status: 3
+tags: []
+user_id: Jaison
