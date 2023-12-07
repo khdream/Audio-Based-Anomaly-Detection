@@ -115,6 +115,6 @@ class Evaluation:
                 # There are other ways to use the Model Registry, which depends on the use case,
                 # please refer to the doc for more information:
                 # https://mlflow.org/docs/latest/model-registry.html#api-workflow
-                mlflow.keras.log_model(model, "model", registered_model_name="Top 10 Features")
+                mlflow.keras.log_model(model, "model", registered_model_name="Top 5 Features")
             else:
                 mlflow.keras.log_model(model, "model")
