@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/Jaison/Documents/Workspace/Main%20Projects/Audio-Based-Anomaly-Detection-for-Industrial-Machinery-End-to-End-Project-using-MLflow-DVC/mlruns/0/1a9cd4d506bc448e8367922e71545b5e/artifacts
+end_time: 1701964705910
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 1a9cd4d506bc448e8367922e71545b5e
+run_name: bouncy-tern-486
+run_uuid: 1a9cd4d506bc448e8367922e71545b5e
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1701964683518
+status: 3
+tags: []
+user_id: Jaison

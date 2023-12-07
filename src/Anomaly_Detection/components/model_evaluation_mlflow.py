@@ -70,27 +70,15 @@ class Evaluation:
         joblib.dump(feature_importance,(os.path.join(self.config.root_dir,"feature_importance.pkl")))
         
 
-        
-    def feature_selection(self, N, feature_importance_ranking, feature_names):
-        top_features_indices = feature_importance_ranking[:N]
-        top_features=[]
-        for rank in feature_importance_ranking[:N]:
-            top_features.append(feature_names[rank])
-        return top_features,top_features_indices
-
     def evaluation(self):
         logger.info(f"Starting Model Evaluation")
         feature_names = joblib.load(self.config.feature_names_path)
-
-        n = self.config.params_feature_count
-        feature_importance_ranking= joblib.load(self.config.feature_importance_path)
-
-        top_features,top_features_indices = self.feature_selection(n, feature_importance_ranking, feature_names)
         X_combined_test = joblib.load(self.config.X_combined_test_path)
         y_combined_test = joblib.load(self.config.y_combined_test_path)
 
+
         autoencoder = load_model(self.config.trained_model_path)
-        self.model_evaluation(autoencoder,X_combined_test, y_combined_test,top_features)        
+        self.model_evaluation(autoencoder,X_combined_test, y_combined_test,feature_names)        
    
 
     def save_score(self,optimal_threshold,optimal_accuracy,optimal_precision,optimal_recall,optimal_f1):
@@ -127,6 +115,6 @@ class Evaluation:
                 # There are other ways to use the Model Registry, which depends on the use case,
                 # please refer to the doc for more information:
                 # https://mlflow.org/docs/latest/model-registry.html#api-workflow
-                mlflow.keras.log_model(model, "model", registered_model_name="Top 5 Features")
+                mlflow.keras.log_model(model, "model", registered_model_name="Top 10 Features")
             else:
                 mlflow.keras.log_model(model, "model")

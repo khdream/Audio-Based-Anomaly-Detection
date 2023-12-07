@@ -67,18 +67,6 @@ class Training:
             verbose=0
             )
         return autoencoder
-
-    def feature_importance(self,autoencoder, X_combined_test):
-        # Predict the reconstructed sounds for the combined test set
-        reconstructed_combined = autoencoder.predict(X_combined_test)
-
-        # Calculate the mean squared reconstruction error for each feature
-        mse_features = np.mean(np.power(X_combined_test - reconstructed_combined, 2), axis=0)
-
-        # Rank features by reconstruction error
-        feature_importance_ranking = np.argsort(mse_features)[::-1]  # Features with the highest error first
-        logger.info(f"feature_importance_ranking: {feature_importance_ranking}")
-        return feature_importance_ranking
     
     def model_evaluation(self,autoencoder,X_combined_test, y_combined_test):
         reconstructed_combined = autoencoder.predict(X_combined_test)
@@ -108,8 +96,7 @@ class Training:
         logger.info(f"Recall: {optimal_recall}")
         logger.info(f"F1 Score: {optimal_f1}")
         logger.info(f"confusion_matrix: {optimal_cm}")
-
-    
+   
     def feature_selection(self, N, feature_importance_ranking, feature_names):
         top_features_indices = feature_importance_ranking[:N]
         top_features=[]
@@ -157,8 +144,7 @@ class Training:
     def train(self):
         logger.info(f"Starting Model Building")
         feature_names = joblib.load(self.config.feature_names_path)
-        abnormal_features_path = joblib.load(self.config.abnormal_features_path)
-        normal_features_path = joblib.load(self.config.normal_features_path)
+
         n = self.config.params_feature_count
         feature_importance_ranking= joblib.load(self.config.feature_importance_path)
         
@@ -166,9 +152,6 @@ class Training:
         X_train_scaled,X_val_scaled,X_combined_test,y_combined_test=self.train_test_spliting(top_features_indices)
         
         autoencoder = self.model_training(X_train_scaled, X_val_scaled)
-        self.model_evaluation(autoencoder,X_combined_test, y_combined_test)
-        feature_importance_ranking = self.feature_importance(autoencoder,X_combined_test)
+        joblib.dump(top_features,(os.path.join(self.config.root_dir, "top_features_list.pkl")))
 
-        joblib.dump(autoencoder,(os.path.join(self.config.root_dir, "autoencoder.pkl")))
-        joblib.dump(feature_importance_ranking,(os.path.join(self.config.root_dir, "updated_feature_importance_ranking.pkl")))
-        autoencoder.save((os.path.join(self.config.root_dir, 'Encoder_Model.keras')))        
+        autoencoder.save(self.config.trained_model_path)       

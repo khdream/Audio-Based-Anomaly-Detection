@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/Jaison/Documents/Workspace/Main%20Projects/Audio-Based-Anomaly-Detection-for-Industrial-Machinery-End-to-End-Project-using-MLflow-DVC/mlruns/0/78e40d5bb7fc4192b4e43aea265da809/artifacts
+end_time: 1701964234943
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 78e40d5bb7fc4192b4e43aea265da809
+run_name: bold-midge-696
+run_uuid: 78e40d5bb7fc4192b4e43aea265da809
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1701964212433
+status: 3
+tags: []
+user_id: Jaison

@@ -1,4 +1,6 @@
 training:
-  BATCH_SIZE: 256
+  FEATURE_COUNT: 10
   EPOCHS: 400
-  FEATURE_COUNT: 5
+  BATCH_SIZE: 256
+  
+  
