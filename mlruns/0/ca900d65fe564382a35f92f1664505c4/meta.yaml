@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/Jaison/Documents/Workspace/Main%20Projects/Audio-Based-Anomaly-Detection-for-Industrial-Machinery-End-to-End-Project-using-MLflow-DVC/mlruns/0/ca900d65fe564382a35f92f1664505c4/artifacts
+end_time: 1701966303366
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: ca900d65fe564382a35f92f1664505c4
+run_name: burly-horse-339
+run_uuid: ca900d65fe564382a35f92f1664505c4
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1701966276267
+status: 3
+tags: []
+user_id: Jaison
