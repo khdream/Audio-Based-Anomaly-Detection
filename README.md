@@ -8,7 +8,7 @@ The essence of this project revolves around crafting and fine-tuning a deep-lear
 The pump sound dataset is a segment of the MIMII Dataset, featuring acoustic recordings that capture the operational nuances of industrial pumps. It includes a rich tapestry of soundscapes illustrating normal functionality, as well as a series of anomalies. These recordings are complemented by ambient factory noises, rendering a realistic backdrop for the model's training and evaluation.
 
 This project is a continuation of the Jupiter notebooks I shared in Kaggle where I used supervised learning and unsupervised learning techniques respectively.
-1. ([Industrial Pump Anomaly Detection using DL](https://www.kaggle.com/code/jaison14/industrial-pump-anomaly-detection-using-dl)
+1. [Industrial Pump Anomaly Detection using DL](https://www.kaggle.com/code/jaison14/industrial-pump-anomaly-detection-using-dl)
 2. [Anomaly Detection using Autoencoder](https://www.kaggle.com/code/jaison14/anomaly-detection-using-autoencoder)
 
 ## Key Accomplishments:
