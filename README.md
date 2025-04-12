@@ -18,10 +18,6 @@ This project has consistently demonstrated a high F1 score, signifying its capab
 * Focused on identifying unknown anomalous sounds under conditions where only normal operational sounds have been provided for training. Used encoders for unsupervised learning showing  great performance in testing((Accuracy: 96.3%, Precision: 97.8%, Recall: 96.4%, F1 Score: 97.1%).
 * Prepared an MLFLow model ready to be deployed at the Azure batch endpoint for real-time batch inference.
 
-## Screenshots from dagshub for Training of Encoder
-![image](https://github.com/JAISON14/Audio-Based-Anomaly-Detection-for-Industrial-Machinery-End-to-End-Project-using-MLflow-DVC/assets/24632348/dcdcd2cd-c93c-4835-883e-9a032db25072)
-![image](https://github.com/JAISON14/Audio-Based-Anomaly-Detection-for-Industrial-Machinery-End-to-End-Project-using-MLflow-DVC/assets/24632348/bbadaa01-d507-4cd0-882c-56a417598b7d)
-
 ## Conclusion
 This project epitomizes the fusion of acoustic analytics and machine learning, paving the way for proactive maintenance strategies that safeguard the operational health of industrial pumps. This endeavor not only enhances reliability but also serves as a stepping stone toward the automation of industrial monitoring systems.
 
